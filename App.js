@@ -10,7 +10,7 @@ import StarMapScreen from './screens/StarMap';
 
 const Stack = createStackNavigator()
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" screenOptions={{
@@ -25,3 +25,5 @@ export default function App() {
 
   );
 }
+
+export default App;
