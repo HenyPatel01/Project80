@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import HomeScreen from './screens/HomeScreen';
 import DailyPicScreen from './screens/DailyPic';
 import SpaceCraftsScreen from './screens/SpaceCrafts';
 import StarMapScreen from './screens/StarMap';
