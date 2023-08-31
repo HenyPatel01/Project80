@@ -14,14 +14,15 @@ import {
 export default class HomeScreen extends Component {
     render() {
         return (
-            <View
-                style={{
-                    flex:1,
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
+            <View>
+                <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}>
                 <Text>Home Screen</Text>
+                </ImageBackground>
             </View>
         )
     }
 }
+
+const styles = StyleSHeet.create({
+
+})
