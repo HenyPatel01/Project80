@@ -23,6 +23,9 @@ export default class HomeScreen extends Component {
     }
 }
 
-const styles = StyleSHeet.create({
-
+const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        resizeMode: "center"
+    }
 })
