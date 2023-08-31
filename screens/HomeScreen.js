@@ -17,7 +17,9 @@ export default class HomeScreen extends Component {
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea}></SafeAreaView>
                 <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}>
-                    <Text>Home Screen</Text>
+                    <View style={styles.titleBar}>
+                        <Text style={styles.titleText}>Stellar App</Text>
+                    </View>
                 </ImageBackground>
             </View>
         )
@@ -34,5 +36,17 @@ const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         resizeMode: "center"
+    },
+    titleBar: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    titleText: {
+        fontSize: 35,
+        color: "white",
+        fontWeight: "bold",
+        marginTop: 80,
+        padding: 100
     }
 })
