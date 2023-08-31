@@ -14,9 +14,10 @@ import {
 export default class HomeScreen extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.container}>
+                <SafeAreaView style={styles.droidSafeArea}></SafeAreaView>
                 <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}>
-                <Text>Home Screen</Text>
+                    <Text>Home Screen</Text>
                 </ImageBackground>
             </View>
         )
@@ -24,6 +25,12 @@ export default class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    droidSafeArea:{
+        marginTop: Platform.OS == "android"? StatusBar.currentHeight: 0
+    },
     backgroundImage: {
         flex: 1,
         resizeMode: "center"
