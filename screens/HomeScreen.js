@@ -38,15 +38,14 @@ const styles = StyleSheet.create({
         resizeMode: "center"
     },
     titleBar: {
-        flex: 0.5,
+        flex: 0.15,
         justifyContent: "center",
         alignItems: "center"
     },
     titleText: {
-        fontSize: 35,
+        fontSize: 40,
         color: "white",
         fontWeight: "bold",
-        marginTop: 50,
-        padding: 100
+        marginTop: -50
     }
 })
