@@ -17,6 +17,7 @@ export default class HomeScreen extends Component {
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea}></SafeAreaView>
                 <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}>
+                <Image source={require('../assets/main-icon.png')} style={{width:'40%', height:"40%", alignSelf:'center'}}></Image>
                     <View style={styles.titleBar}>
                         <Text style={styles.titleText}>Stellar App</Text>
                     </View>
@@ -24,7 +25,16 @@ export default class HomeScreen extends Component {
                         this.props.navigation.navigate("SpaceCrafts")}>
                         <Text style={styles.routeText}>Space Crafts</Text>
                         <Image source={require('../assets/space_crafts.png')} style={styles.iconImage}></Image>
-
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.routeCard} onPress={()=>
+                        this.props.navigation.navigate("StarMap")}>
+                        <Text style={styles.routeText}>Space Map</Text>
+                        <Image source={require('../assets/star_map.png')} style={[styles.iconImage,{right:-1}]}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.routeCard} onPress={()=>
+                        this.props.navigation.navigate("DailyPic")}>
+                        <Text style={styles.routeText}>Daily Pic</Text>
+                        <Image source={require('../assets/daily_pictures.png')} style={[styles.iconImage,{right:-30}]}></Image>
                     </TouchableOpacity>
                 </ImageBackground>
             </View>
@@ -67,7 +77,7 @@ const styles = StyleSheet.create({
     routeText: {
         fontSize: 25,
         fontWeight: "bold",
-        color: "white",
+        color: "pink",
         marginTop: -50
     },
     iconImage: {
