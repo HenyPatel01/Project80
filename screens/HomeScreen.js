@@ -20,6 +20,12 @@ export default class HomeScreen extends Component {
                     <View style={styles.titleBar}>
                         <Text style={styles.titleText}>Stellar App</Text>
                     </View>
+                    <TouchableOpacity style={styles.routeCard} onPress={()=>
+                        this.props.navigation.navigate("SpaceCrafts")}>
+                        <Text style={styles.routeText}>Space Crafts</Text>
+                        <Image source={require('../assets/space_crafts.png')} style={styles.iconImage}></Image>
+
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>
         )
