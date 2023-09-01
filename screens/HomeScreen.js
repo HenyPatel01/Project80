@@ -24,17 +24,17 @@ export default class HomeScreen extends Component {
                     <TouchableOpacity style={styles.routeCard} onPress={()=>
                         this.props.navigation.navigate("SpaceCrafts")}>
                         <Text style={styles.routeText}>Space Crafts</Text>
-                        <Image source={require('../assets/space_crafts.png')} style={styles.iconImage}></Image>
+                        <Image source={require('../assets/space_crafts.png')} style={[styles.iconImage,{height:100,width:100}]}></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.routeCard} onPress={()=>
                         this.props.navigation.navigate("StarMap")}>
                         <Text style={styles.routeText}>Space Map</Text>
-                        <Image source={require('../assets/star_map.png')} style={[styles.iconImage,{right:-1}]}></Image>
+                        <Image source={require('../assets/star_map.png')} style={styles.iconImage}></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.routeCard} onPress={()=>
                         this.props.navigation.navigate("DailyPic")}>
                         <Text style={styles.routeText}>Daily Pic</Text>
-                        <Image source={require('../assets/daily_pictures.png')} style={[styles.iconImage,{right:-30}]}></Image>
+                        <Image source={require('../assets/daily_pictures.png')} style={[styles.iconImage,{right:-10}]}></Image>
                     </TouchableOpacity>
                 </ImageBackground>
             </View>
@@ -59,31 +59,31 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     titleText: {
-        fontSize: 40,
+        fontSize: 50,
         color: "white",
         fontWeight: "bold",
         marginTop: -50
     },
     routeCard: {
-        flex: 0.25,
+        flex: 0.24,
         justifyContent: "center",
         alignItems: "center",
         margin: 10,
         marginLeft: 30,
         marginRight: 30,
-        borderRadius: 100,
+        borderRadius: 90,
         backgroundColor: "white"
     },
     routeText: {
-        fontSize: 25,
+        fontSize: 32,
+        alignItems: "center",
         fontWeight: "bold",
-        color: "pink",
-        marginTop: -50
+        color: "#e0149c",
     },
     iconImage: {
         position: "absolute",
-        height: 80,
-        width: 80,
+        height: 95,
+        width: 95,
         resizeMode: "contain",
         right: -19,
         top: -12.5,
