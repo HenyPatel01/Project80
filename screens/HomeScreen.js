@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         resizeMode: "center"
     },
     titleBar: {
-        flex: 1,
+        flex: 0.5,
         justifyContent: "center",
         alignItems: "center"
     },
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         fontSize: 35,
         color: "white",
         fontWeight: "bold",
-        marginTop: 80,
+        marginTop: 50,
         padding: 100
     }
 })
