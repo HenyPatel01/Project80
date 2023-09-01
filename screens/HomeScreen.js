@@ -53,5 +53,29 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         marginTop: -50
+    },
+    routeCard: {
+        flex: 0.25,
+        justifyContent: "center",
+        alignItems: "center",
+        margin: 10,
+        marginLeft: 30,
+        marginRight: 30,
+        borderRadius: 100,
+        backgroundColor: "white"
+    },
+    routeText: {
+        fontSize: 25,
+        fontWeight: "bold",
+        color: "white",
+        marginTop: -50
+    },
+    iconImage: {
+        position: "absolute",
+        height: 80,
+        width: 80,
+        resizeMode: "contain",
+        right: -19,
+        top: -12.5,
     }
 })
