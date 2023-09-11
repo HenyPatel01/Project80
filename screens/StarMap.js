@@ -27,7 +27,7 @@ export default class StarMapScreen extends Component {
         return (
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea}/>
-                <View style={styles.container2}>
+                <View style={{flex: 0.3, marginTop: 20, alignItems: "center"}}>
                     <Text style={styles.titleText}>Star Map</Text>
                     <TextInput
                         style={{height: 40, borderColor: "gray", borderWidth: 1}}
@@ -69,11 +69,6 @@ const styles = StyleSheet.create({
     },
     droidSafeArea: {
         marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
-    },
-    container2: {
-        flex: 0.3,
-        marginTop: 20,
-        alignItems: "center"
     },
     titleText: {
         fontSize: 35,
