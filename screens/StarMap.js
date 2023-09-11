@@ -25,9 +25,9 @@ export default class StarMapScreen extends Component {
         const { longitude, latitude } = this.state;
         const path = 'https://virtualsky.lco.global/embed/index.html?longitude=${longitude}&latitude=${latitude}&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&live=true&projection=stereo&showdate=false&showposition=false'
         return (
-            <View style={styles.container}>
+            <View style={{flex:1,backgroundColor:'#1a0023'}}>
                 <SafeAreaView style={styles.droidSafeArea}/>
-                <View>
+                <View style={{flex: 0.3, marginTop: 20, alignItems: 'center'}}>
                     <Text style={styles.titleText}>Star Map</Text>
                     <TextInput
                         style={{height: 40, borderColor: "gray", borderWidth: 1}}
