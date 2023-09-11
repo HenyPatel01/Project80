@@ -22,6 +22,8 @@ export default class StarMapScreen extends Component {
         }
     }
     render() {
+        const { longitude, latitude } = this.state;
+        const path = 'https://virtualsky.lco.global/embed/index.html?longitude=77.102493&latitude=28.704060&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&live=true'
         return (
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea}/>
@@ -30,7 +32,7 @@ export default class StarMapScreen extends Component {
                     <TextInput
                         style={{height: 40, borderColor: "gray", borderWidth: 1}}
                         placeholder="Enter your latitude"
-                        placeholderTextColor = "#ffff#000000"
+                        placeholderTextColor = "#ffff"
                         onChangeText={(text)=>{
                             this.setState({
                                 latitude: text
@@ -40,7 +42,7 @@ export default class StarMapScreen extends Component {
                     <TextInput
                         style={{height: 40, borderColor: "gray", borderWidth: 1}}
                         placeholder="Enter your longitude"
-                        placeholderTextColor = "#ffff#000000"
+                        placeholderTextColor = "#ffff"
                         onChangeText={(text)=>{
                             this.setState({
                                 longitude: text
@@ -48,6 +50,11 @@ export default class StarMapScreen extends Component {
                         }}
                     />
                 </View>
+                <WebView
+                    scalesPageToFit={true}
+                    source={{uri: path}}
+                    style={{marginTop: 20, marginBottom: 20}}
+                />
             </View>
         )
     }
