@@ -57,6 +57,9 @@ export default class DailyPicScreen extends Component {
                         onPress={() => Linking.openURL(this.state.apod.url).catch(err => console.error("Couldn't load page", err))}
                     >
                         <View style={styles.iconContainer}>
+                            <Image source={{uri:this.state.apod.url}}
+                        style={{width:"100%",height:300,borderRadius:20}}
+                        ></Image>
                             <Image source={require("../assets/play-video.png")} style={{width:50, height:50}}></Image>
                         </View>
                     </TouchableOpacity>
