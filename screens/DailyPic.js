@@ -1,5 +1,16 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {
+    Text, 
+    View, 
+    StyleSheet, 
+    SafeAreaView,
+    ScrollView,
+    TouchableOpacity, 
+    Platform, 
+    StatusBar, 
+    ImageBackground, 
+    Image
+} from 'react-native';
 import axios from "axios";
 
 export default class DailyPicScreen extends Component {
@@ -26,15 +37,37 @@ export default class DailyPicScreen extends Component {
     }
 
     render() {
-        return (
-            <View
-                style={{
-                    flex:1,
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
-                <Text>Daily Pic Screen</Text>
-            </View>
-        )
+        if (Object.keys(this.state.apod).length === 0) {
+            return (
+                <View
+                    style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                    <Text>Loading</Text>
+                </View>
+            )
+        }
+        else {
+            return (
+                <View style={styles.container}>
+                    <SafeAreaView style={styles.droidSafeArea}/>
+                    <ImageBackground
+                        source={require('../assets/stars.gif')} style={styles.backgroundImage}>
+                        <Text style={styles.routeText}>Astronomy Picture of The Day</Text>
+                        <Text style={styles.titleText}>{this.state.apod.title}</Text>
+                        <TouchableOpacity style={styles.listContainer}
+                        onPress={() => Linking.openURL(this.state.apod.url).catch(err => console.error("Couldn't load page", err))}
+                    >
+                        <View style={styles.iconContainer}>
+                            <Image source={require("../assets/play-video.png")} style={{width:50, height:50}}></Image>
+                        </View>
+                    </TouchableOpacity>
+                            <Text style={styles.explanationText}>{this.state.apod.explanation}</Text>
+                    </ImageBackground>
+                </View>
+            )
+        }
     }
 }
+
+const styles = StyleSheet.create({
+
+})
