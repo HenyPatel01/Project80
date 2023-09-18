@@ -9,7 +9,8 @@ import {
     Platform, 
     StatusBar, 
     ImageBackground, 
-    Image
+    Image,
+    Linking
 } from 'react-native';
 import axios from "axios";
 
@@ -72,5 +73,45 @@ export default class DailyPicScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    droidSafeArea: {
+        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover'
+    },
+    routeText: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center'
+    },
+    titleText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: "purple"
+    },
+    listContainer: {
+        backgroundColor: 'purple',
+        flex: 0.8,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 5,
+        borderRadius: 10
+    },
+    iconContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    explanationText: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: 'white',
+        marginTop: 10
+    }
 })
