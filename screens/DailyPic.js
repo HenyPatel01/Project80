@@ -54,7 +54,8 @@ export default class DailyPicScreen extends Component {
                         source={require('../assets/stars.gif')} style={styles.backgroundImage}>
                         <Text style={styles.routeText}>Astronomy Picture of The Day</Text>
                         <Text style={styles.titleText}>{this.state.apod.title}</Text>
-                        <TouchableOpacity style={styles.listContainer}
+                        <ScrollView style={styles.listContainer}>
+                        <TouchableOpacity
                         onPress={() => Linking.openURL(this.state.apod.url).catch(err => console.error("Couldn't load page", err))}
                     >
                         <View style={styles.iconContainer}>
@@ -63,8 +64,10 @@ export default class DailyPicScreen extends Component {
                         ></Image>
                             <Image source={require("../assets/play-video.png")} style={{width:50, height:50}}></Image>
                         </View>
+
                     </TouchableOpacity>
                             <Text style={styles.explanationText}>{this.state.apod.explanation}</Text>
+                        </ScrollView>
                     </ImageBackground>
                 </View>
             )
@@ -92,12 +95,13 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     titleText: {
+        marginLeft: 5,
         fontSize: 25,
         fontWeight: 'bold',
-        color: "purple"
+        color: "#d271f0"
     },
     listContainer: {
-        backgroundColor: 'purple',
+        backgroundColor: '#8448d99e',
         flex: 0.8,
         marginLeft: 10,
         marginRight: 10,
@@ -112,6 +116,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         color: 'white',
-        marginTop: 10
+        marginTop: 10,
     }
 })
