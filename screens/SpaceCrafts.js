@@ -39,18 +39,21 @@ export default class SpaceCraftsScreen extends Component {
 
     renderItem = ({item}) =>{
         return(
-            <View style={{borderWidth:1,justifyContent:"center",alignItems:"center",marginBottom:10,elevation:10}}>
+            <View style={{borderRadius:5,justifyContent:"center",alignItems:"center",margin:20,elevation:10, backgroundColor: 'white'}}>
                 <Image
                 source={{uri: item.agency.image_url}} 
                 style={{width:"100%",height:200,marginTop:15,marginBottom:15,marginRight:10}}></Image>
-
-            <Text style={{fontWeight:'bold',fontSize:20}}>{item.name}</Text>
-            <Text style={{color:'#696969'}}>{item.agency.name}</Text>
-            <Text>DESCRIPTION</Text>
-            <Text style={{color:'#A9A9A9',marginLeft:10,marginRight:10}}>{item.agency.description}</Text>
+            <View style={{padding: 20}}>
+                <Text style={{fontWeight:'bold',fontSize:20, color: 'purple'}}>{item.name}</Text>
+                <Text style={{color:'#696969'}}>{item.agency.name}</Text>
+                <Text>DESCRIPTION</Text>
+                <Text style={{color:'#A9A9A9',marginLeft:10,marginRight:10}}>{item.agency.description}</Text>
+            </View>
             </View>
         )
     }
+
+    keyExtractor = (item, index) => index.toString();
 
     render() {
         if (Object.keys(this.state.aircrafts).length === 0) {
@@ -65,10 +68,10 @@ export default class SpaceCraftsScreen extends Component {
                 <View style={styles.container}>
                     <SafeAreaView style={styles.droidSafeArea}/>
                     <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}></ImageBackground>
-                    <View styles={{flex:0.25}}>
-                        <Text>Space Crafts</Text>
+                    <View styles={{flex:0.15, alignItems: 'center', justifyContent: 'center'}}>
+                        <Text style={styles.titleText}>Space Crafts</Text>
                     </View>
-                    <View styles={{flex:0.75}}>
+                    <View styles={{flex:0.85}}>
                     <FlatList
                         keyExtractor={this.keyExtractor}
                         data={this.state.aircrafts}
@@ -84,8 +87,6 @@ export default class SpaceCraftsScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
     },
     droidSafeArea:{
         marginTop: Platform.OS == "android"? StatusBar.currentHeight: 0
@@ -93,5 +94,12 @@ const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         resizeMode: 'cover',
+    },
+    titleText: {
+        fontSize: 35,
+        fontWeight: "bold",
+        color: "purple",
+        justifyContent: "center",
+        alignContent: "center",
     }
 })
