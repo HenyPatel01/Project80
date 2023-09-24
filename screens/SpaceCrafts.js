@@ -46,7 +46,7 @@ export default class SpaceCraftsScreen extends Component {
             <View style={{padding: 20}}>
                 <Text style={{fontWeight:'bold',fontSize:20, color: 'purple'}}>{item.name}</Text>
                 <Text style={{color:'#696969'}}>{item.agency.name}</Text>
-                <Text>DESCRIPTION</Text>
+                <Text>Description</Text>
                 <Text style={{color:'#A9A9A9',marginLeft:10,marginRight:10}}>{item.agency.description}</Text>
             </View>
             </View>
@@ -68,9 +68,7 @@ export default class SpaceCraftsScreen extends Component {
                 <View style={styles.container}>
                     <SafeAreaView style={styles.droidSafeArea}/>
                     <ImageBackground source={require("../assets/stars.gif")} style={styles.backgroundImage}>
-                    <View styles={{flex:0.15, alignItems: 'center', justifyContent: 'center'}}>
-                        <Text style={styles.titleText}>Space Crafts</Text>
-                    </View>
+                            <Text style={styles.titleText}>Space Crafts</Text>
                     <View styles={{flex:0.85}}>
                     <FlatList
                         keyExtractor={this.keyExtractor}
@@ -99,8 +97,6 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 35,
         fontWeight: "bold",
-        color: "purple",
-        justifyContent: "center",
-        alignContent: "center",
+        color: "white",
     }
 })
