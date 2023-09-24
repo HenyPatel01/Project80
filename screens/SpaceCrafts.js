@@ -53,24 +53,45 @@ export default class SpaceCraftsScreen extends Component {
     }
 
     render() {
-        return (
-            <View
-                style={{
-                    flex:1,
-                    justifyContent:"center",
-                    alignItems: "center"
-                }}>
-                <View styles={{flex:0.25}}>
-                    <Text>Space Crafts</Text>
+        if (Object.keys(this.state.aircrafts).length === 0) {
+            return (
+                <View
+                    style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                    <Text>Loading</Text>
                 </View>
-                <View styles={{flex:0.75}}>
-                <FlatList
-                    keyExtractor={this.keyExtractor}
-                    data={this.state.aircrafts}
-                    renderItem={this.renderItem}    
-                />
+            )
+        } else {
+            return (
+                <View style={styles.container}>
+                    <SafeAreaView style={styles.droidSafeArea}/>
+                    <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}></ImageBackground>
+                    <View styles={{flex:0.25}}>
+                        <Text>Space Crafts</Text>
+                    </View>
+                    <View styles={{flex:0.75}}>
+                    <FlatList
+                        keyExtractor={this.keyExtractor}
+                        data={this.state.aircrafts}
+                        renderItem={this.renderItem}    
+                    />
+                    </View>
                 </View>
-            </View>
-        )
+            )
     }
 }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    droidSafeArea:{
+        marginTop: Platform.OS == "android"? StatusBar.currentHeight: 0
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover',
+    }
+})
