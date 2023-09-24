@@ -11,6 +11,7 @@ import {
     ImageBackground, 
     Image
 } from 'react-native';
+
 import axios from "axios";
 
 export default class SpaceCraftsScreen extends Component {
@@ -41,8 +42,7 @@ export default class SpaceCraftsScreen extends Component {
         return(
             <View style={{borderRadius:5,justifyContent:"center",alignItems:"center",margin:20,elevation:10, backgroundColor: 'white'}}>
                 <Image
-                source={{uri: item.agency.image_url}} 
-                style={{width:"100%",height:200,marginTop:15,marginBottom:15,marginRight:10}}></Image>
+                source={{uri: item.agency.image_url}} style={{width:"100%",height:200,marginTop:15,marginBottom:15,marginRight:10}}></Image>
             <View style={{padding: 20}}>
                 <Text style={{fontWeight:'bold',fontSize:20, color: 'purple'}}>{item.name}</Text>
                 <Text style={{color:'#696969'}}>{item.agency.name}</Text>
@@ -67,7 +67,7 @@ export default class SpaceCraftsScreen extends Component {
             return (
                 <View style={styles.container}>
                     <SafeAreaView style={styles.droidSafeArea}/>
-                    <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}></ImageBackground>
+                    <ImageBackground source={require("../assets/stars.gif")} style={styles.backgroundImage}>
                     <View styles={{flex:0.15, alignItems: 'center', justifyContent: 'center'}}>
                         <Text style={styles.titleText}>Space Crafts</Text>
                     </View>
@@ -78,6 +78,7 @@ export default class SpaceCraftsScreen extends Component {
                         renderItem={this.renderItem}    
                     />
                     </View>
+                    </ImageBackground>
                 </View>
             )
     }
